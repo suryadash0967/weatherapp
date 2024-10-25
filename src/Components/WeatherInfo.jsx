@@ -66,17 +66,17 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                                 flexDirection: 'column',
                                                 padding: '12px'
                                             }}
-                                        >
+                                            >
+                                            <span><b>Temperature</b>: {info.temp}</span>
                                             <span><b>Latitude</b>: {info.lat}</span>
                                             <span><b>Longitude</b>: {info.lon}</span>
                                             <span><b>Feels Like</b>: {info.feels_like}</span>
                                             <span><b>Humidity</b>: {info.humidity}</span>
                                             <span><b>Pressure</b>: {info.pressure}</span>
                                             <span><b>Sea Level</b>: {info.sea_level}</span>
-                                            <span><b>Temperature</b>: {info.temp}</span>
                                             <span><b>Min Temperature</b>: {info.temp_min}</span>
-                                            <span><b>Max Temperature</b>: {info.temp_max}</span>
                                             <span><b>Weather</b>: {info.weather}</span>
+                                            <span><b>Max Temperature</b>: {info.temp_max}</span>
                                         </div>
                                     </div>
                                 </Card>
