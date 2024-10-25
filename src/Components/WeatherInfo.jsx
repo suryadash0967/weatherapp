@@ -73,7 +73,7 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                             <span><b>Longitude</b>: {info.lon} &deg;E</span>
                                             <span><b>Feels Like</b>: {info.feels_like} &deg;C</span>
                                             <span><b>Humidity</b>: {info.humidity} g/m<sup>3</sup></span>
-                                            <span><b>Pressure</b>: {info.pressure} Pa</span>
+                                            <span><b>Pressure</b>: {info.pressure} hPa</span>
                                             <span><b>Sea Level</b>: {info.sea_level} mm</span>
                                             <span><b>Temperature</b>: {info.temp} &deg;C</span>
                                             <span><b>Min Temperature</b>: {info.temp_min} &deg;C</span>
