@@ -11,7 +11,7 @@ export default function SearchBox({ updateInfo, setIsLoading, setIsError }) {
     let getWeather = async () => {
         setIsError(false)
         try {
-            let response = await fetch(`${URL}?q=${city}&appid=${API_KEY}&units=metric`);
+            let response = await fetch(`${URL}?q=${city.trim()}&appid=${API_KEY}&units=metric`);
             let data = await response.json();
             let result = {
                 city_name: data.name,
