@@ -33,7 +33,7 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                             >
                                 <Card sx={{ maxWidth: 500 }}>
                                     <CardMedia
-                                        sx={{ height: 200, width: 380 }}
+                                        sx={{ height: 200, width: 370 }}
                                         image={info.humidity > 80 ? HUMID_URL : (info.temp < 20 ? COLD_URL : HOT_URL)}
                                         title="green iguana"
                                     />
