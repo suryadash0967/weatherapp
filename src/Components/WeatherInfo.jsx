@@ -76,6 +76,7 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                             <span><b>Temperature</b>: {info.temp}</span>
                                             <span><b>Min Temperature</b>: {info.temp_min}</span>
                                             <span><b>Max Temperature</b>: {info.temp_max}</span>
+                                            <span><b>Weather</b>: {info.weather}</span>
                                         </div>
                                     </div>
                                 </Card>
