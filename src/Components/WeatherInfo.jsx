@@ -8,7 +8,7 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
     const INIT_URL = "https://images.unsplash.com/photo-1553018622-b3e38e625798?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFkJTIwd2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D"
     const HOT_URL = "https://images.unsplash.com/photo-1496151981150-6d7319e97e56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGhvdCUyMHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D"
     const COLD_URL = "https://images.unsplash.com/photo-1454692173233-f4f34c12adad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIyfHx3aW50ZXJ8ZW58MHx8MHx8fDA%3D"
-    const HUMID_URL = "https://images.unsplash.com/photo-1581324330773-8ef0e8207c67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aHVtaWRpdHl8ZW58MHx8MHx8fDA%3D"
+    const HUMID_URL = "https://plus.unsplash.com/premium_photo-1664112065598-77832fcd9b8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2xvdWR5fGVufDB8MHwwfHx8MA%3D%3D"
     const info = weatherInfo;
 
     return (
@@ -53,7 +53,8 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                                 margin: '0', 
                                                 display: 'flex', 
                                                 justifyContent: 'center', 
-                                                alignItems: 'center', 
+                                                alignItems: 'center',
+                                                marginTop: '15px'
                                             }}
                                         >
                                             {info.city_name}
@@ -67,16 +68,16 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                                 padding: '12px'
                                             }}
                                         >
-                                            <span><b>Weather</b>: {info.weather}</span>
-                                            <span><b>Latitude</b>: {info.lat}</span>
-                                            <span><b>Longitude</b>: {info.lon}</span>
-                                            <span><b>Feels Like</b>: {info.feels_like}</span>
-                                            <span><b>Humidity</b>: {info.humidity}</span>
-                                            <span><b>Pressure</b>: {info.pressure}</span>
-                                            <span><b>Sea Level</b>: {info.sea_level}</span>
-                                            <span><b>Temperature</b>: {info.temp}</span>
-                                            <span><b>Min Temperature</b>: {info.temp_min}</span>
-                                            <span><b>Max Temperature</b>: {info.temp_max}</span>
+                                            <span><b>Weather</b>: {info.weather.charAt(0).toUpperCase() + info.weather.slice(1)}</span>
+                                            <span><b>Latitude</b>: {info.lat} &deg;N</span>
+                                            <span><b>Longitude</b>: {info.lon} &deg;E</span>
+                                            <span><b>Feels Like</b>: {info.feels_like} &deg;C</span>
+                                            <span><b>Humidity</b>: {info.humidity} g/m<sup>3</sup></span>
+                                            <span><b>Pressure</b>: {info.pressure} Pa</span>
+                                            <span><b>Sea Level</b>: {info.sea_level} mm</span>
+                                            <span><b>Temperature</b>: {info.temp} &deg;C</span>
+                                            <span><b>Min Temperature</b>: {info.temp_min} &deg;C</span>
+                                            <span><b>Max Temperature</b>: {info.temp_max} &deg;C</span>
                                         </div>
                                     </div>
                                 </Card>
