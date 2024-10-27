@@ -83,24 +83,16 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                                 height: '100%'
                                             }}
                                         >
-                                            <div
-                                                style={{
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    padding: '12px'
-                                                }}
-                                            >
-                                                <span><b>Weather</b>: {info.weather.charAt(0).toUpperCase() + info.weather.slice(1)}</span>
-                                                <span><b>Latitude</b>: {info.lat} &deg;N</span>
-                                                <span><b>Longitude</b>: {info.lon} &deg;E</span>
-                                                <span><b>Feels Like</b>: {info.feels_like} &deg;C</span>
-                                                <span><b>Humidity</b>: {info.humidity} g/m<sup>3</sup></span>
-                                                <span><b>Pressure</b>: {info.pressure} Pa</span>
-                                                <span><b>Sea Level</b>: {info.sea_level} mm</span>
-                                                <span><b>Temperature</b>: {info.temp} &deg;C</span>
-                                                <span><b>Min Temperature</b>: {info.temp_min} &deg;C</span>
-                                                <span><b>Max Temperature</b>: {info.temp_max} &deg;C</span>
-                                            </div>
+                                            <span><b>Weather</b>: {info.weather.charAt(0).toUpperCase() + info.weather.slice(1)}</span>
+                                            <span><b>Latitude</b>: {info.lat} &deg;N</span>
+                                            <span><b>Longitude</b>: {info.lon} &deg;E</span>
+                                            <span><b>Feels Like</b>: {info.feels_like} &deg;C</span>
+                                            <span><b>Humidity</b>: {info.humidity} g/m<sup>3</sup></span>
+                                            <span><b>Pressure</b>: {info.pressure} hPa</span>
+                                            <span><b>Sea Level</b>: {info.sea_level} mm</span>
+                                            <span><b>Temperature</b>: {info.temp} &deg;C</span>
+                                            <span><b>Min Temperature</b>: {info.temp_min} &deg;C</span>
+                                            <span><b>Max Temperature</b>: {info.temp_max} &deg;C</span>
                                         </div>
                                     </div>
                                 </Card>
