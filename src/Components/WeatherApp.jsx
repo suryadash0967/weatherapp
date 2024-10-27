@@ -3,7 +3,7 @@ import SearchBox from "./SearchBox";
 import WeatherInfo from './WeatherInfo';
 import { ThemeContext } from "../App";
 
-export default function WeatherApp() {
+export default function WeatherApp({setTheme}) {
     const theme = useContext(ThemeContext)
 
     const [weatherInfo, setWeatherInfo] = useState({
@@ -45,7 +45,7 @@ export default function WeatherApp() {
             }}
         >
             <h2 style={{paddingBottom: '15px'}}>Welcome To OpenWeather</h2>
-            <SearchBox updateInfo={updateInfo} setIsLoading={setIsLoading} setIsError={setIsError} />
+            <SearchBox updateInfo={updateInfo} setIsLoading={setIsLoading} setIsError={setIsError} setTheme={setTheme} />
             <WeatherInfo weatherInfo={weatherInfo} isLoading={isLoading} isError={isError} />
         </div>
     );

@@ -2,8 +2,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from "../App";
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { Padding } from '@mui/icons-material'
 
-export default function SearchBox({ updateInfo, setIsLoading, setIsError }) {
+export default function SearchBox({ updateInfo, setIsLoading, setIsError, setTheme }) {
     const theme = useContext(ThemeContext)
     const [city, setCity] = useState("")
 
@@ -30,7 +33,7 @@ export default function SearchBox({ updateInfo, setIsLoading, setIsError }) {
             };
             return result;
         }
-        catch (err){
+        catch (err) {
             setIsError(true)
         }
     }
@@ -58,18 +61,61 @@ export default function SearchBox({ updateInfo, setIsLoading, setIsError }) {
                     alignContent: 'center',
                 }}
             >
-                <TextField 
-                    id="filled-basic"
-                    label="City"
-                    variant="filled"
-                    value={city}
-                    onChange={handleInputChange} 
-                    sx={{
-                        backgroundColor: theme === 'dark' ? 'rgb(40, 40, 40)' : '#fff',
-                        input: { color: theme === 'dark' ? '#fff' : '#000' },
-                        label: { color: theme === 'dark' ? '#fff' : '#000' },
+
+                <div
+                    style={{
+                        display: 'flex'
                     }}
-                />
+                >
+                    <TextField
+                        id="filled-basic"
+                        label="City"
+                        variant="filled"
+                        value={city}
+                        onChange={handleInputChange}
+                        sx={{
+                            backgroundColor: theme === 'dark' ? 'rgb(40, 40, 40)' : '#fff',
+                            input: { color: theme === 'dark' ? '#fff' : '#000' },
+                            label: { color: theme === 'dark' ? '#fff' : '#000' },
+                        }}
+                    />
+                    <div
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginLeft: '20px'
+                        }}
+                    >
+                        {theme === 'dark' ? (
+                            <DarkModeIcon
+                                style={{
+                                    color: '#f1c40f',
+                                    cursor: 'pointer',
+                                    fontSize: '35px',
+                                    backgroundColor: theme === 'dark' ? '#000' : '#cdcdcd',
+                                    padding: '5px',
+                                    borderRadius: '50%'
+                                }}
+                                onClick={() => setTheme('light')}
+                            />
+                        ) : (
+                            <WbSunnyIcon
+                                style={{
+                                    color: '#f39c12',
+                                    cursor: 'pointer',
+                                    fontSize: '35px',
+                                    backgroundColor: theme === 'dark' ? '#000' : '#cdcdcd',
+                                    padding: '5px',
+                                    borderRadius: '50%'
+                                }}
+                                onClick={() => setTheme('dark')}
+                            />
+                        )}
+                    </div>
+
+                </div>
+
                 <Button
                     variant="contained"
                     type="submit"
