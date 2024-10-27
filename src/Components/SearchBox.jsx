@@ -93,7 +93,7 @@ export default function SearchBox({ updateInfo, setIsLoading, setIsError, setThe
                                     color: '#f1c40f',
                                     cursor: 'pointer',
                                     fontSize: '35px',
-                                    backgroundColor: theme === 'dark' ? '#000' : '#cdcdcd',
+                                    backgroundColor: theme === 'dark' ? '#000' : 'rgb(231 231 231)',
                                     padding: '5px',
                                     borderRadius: '50%'
                                 }}
@@ -105,7 +105,7 @@ export default function SearchBox({ updateInfo, setIsLoading, setIsError, setThe
                                     color: '#f39c12',
                                     cursor: 'pointer',
                                     fontSize: '35px',
-                                    backgroundColor: theme === 'dark' ? '#000' : '#cdcdcd',
+                                    backgroundColor: theme === 'dark' ? '#000' : 'rgb(231 231 231)',
                                     padding: '5px',
                                     borderRadius: '50%'
                                 }}

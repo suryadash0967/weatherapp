@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import SearchBox from "./SearchBox";
 import WeatherInfo from './WeatherInfo';
 import { ThemeContext } from "../App";
+import Footer from "./Footer";
 
 export default function WeatherApp({setTheme}) {
     const theme = useContext(ThemeContext)
@@ -37,7 +38,7 @@ export default function WeatherApp({setTheme}) {
             style={{
                 ...darkThemeStyles,
                 width: '100%',
-                height: 'fit-content',
+                height: 'calc(max(100vh, 100%))',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -47,6 +48,7 @@ export default function WeatherApp({setTheme}) {
             <h2 style={{paddingBottom: '15px'}}>Welcome To OpenWeather</h2>
             <SearchBox updateInfo={updateInfo} setIsLoading={setIsLoading} setIsError={setIsError} setTheme={setTheme} />
             <WeatherInfo weatherInfo={weatherInfo} isLoading={isLoading} isError={isError} />
+            <Footer/>
         </div>
     );
 }

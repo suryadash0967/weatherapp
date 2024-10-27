@@ -37,7 +37,7 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                             <div
                                 style={{
                                     ...darkThemeStyles,
-                                    border: '1px solid rgb(0, 0, 0, 0.5)',
+                                    border: '1px solid rgb(77, 77, 77)',
                                     borderRadius: '10px',
                                     width: 'min-content',
                                 }}
@@ -78,9 +78,9 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                             style={{
                                                 display: 'flex',
                                                 justifyContent: 'center',
-                                                alignItems: 'center',
-                                                width: '100%',
-                                                height: '100%', flexDirection: 'column',
+                                                width: 'fit-content',
+                                                height: '100%',
+                                                flexDirection: 'column',
                                             }}
                                         >
                                             <span><b>Weather</b>: {info.weather.charAt(0).toUpperCase() + info.weather.slice(1)}</span>

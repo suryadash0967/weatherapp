@@ -10,7 +10,8 @@ function App() {
   return (
     <div
       style={{
-        backgroundColor: theme === 'dark' ? 'rgb(22, 24, 29)' : '#fff'
+        backgroundColor: theme === 'dark' ? 'rgb(22, 24, 29)' : '#fff',
+        height: '100%'
       }}
     >
       <ThemeContext.Provider value={theme}>
