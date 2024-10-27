@@ -80,7 +80,7 @@ export default function WeatherApp({ weatherInfo, isLoading, isError }) {
                                                 justifyContent: 'center',
                                                 alignItems: 'center',
                                                 width: '100%',
-                                                height: '100%'
+                                                height: '100%', flexDirection: 'column',
                                             }}
                                         >
                                             <span><b>Weather</b>: {info.weather.charAt(0).toUpperCase() + info.weather.slice(1)}</span>
