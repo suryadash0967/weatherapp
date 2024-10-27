@@ -1,8 +1,10 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from "../App";
 
 export default function SearchBox({ updateInfo, setIsLoading, setIsError }) {
+    const theme = useContext(ThemeContext)
     const [city, setCity] = useState("")
 
     const API_KEY = 'ea391a68e116f490ab44cda5323802ae'
@@ -56,12 +58,17 @@ export default function SearchBox({ updateInfo, setIsLoading, setIsError }) {
                     alignContent: 'center',
                 }}
             >
-                <TextField
-                    id="outlined-basic"
+                <TextField 
+                    id="filled-basic"
                     label="City"
-                    variant="outlined"
+                    variant="filled"
                     value={city}
-                    onChange={handleInputChange}
+                    onChange={handleInputChange} 
+                    sx={{
+                        backgroundColor: theme === 'dark' ? 'rgb(40, 40, 40)' : '#fff',
+                        input: { color: theme === 'dark' ? '#fff' : '#000' },
+                        label: { color: theme === 'dark' ? '#fff' : '#000' },
+                    }}
                 />
                 <Button
                     variant="contained"

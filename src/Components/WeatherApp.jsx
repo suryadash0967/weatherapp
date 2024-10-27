@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SearchBox from "./SearchBox";
 import WeatherInfo from './WeatherInfo';
+import { ThemeContext } from "../App";
 
 export default function WeatherApp() {
+    const theme = useContext(ThemeContext)
+
     const [weatherInfo, setWeatherInfo] = useState({
         city_name: "Delhi",
         feels_like: 30.76,
@@ -24,18 +27,24 @@ export default function WeatherApp() {
         setIsLoading(false);
     };
 
+    let darkThemeStyles = {
+        backgroundColor: theme === 'dark' ? 'rgb(22, 24, 29)' : '#fff',
+        color: theme === 'dark' ? '#fff' : '#000'
+    }
+
     return (
         <div
             style={{
+                ...darkThemeStyles,
                 width: '100%',
                 height: 'fit-content',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
             }}
         >
-            <h2>Welcome To OpenWeather</h2>
+            <h2 style={{paddingBottom: '15px'}}>Welcome To OpenWeather</h2>
             <SearchBox updateInfo={updateInfo} setIsLoading={setIsLoading} setIsError={setIsError} />
             <WeatherInfo weatherInfo={weatherInfo} isLoading={isLoading} isError={isError} />
         </div>
