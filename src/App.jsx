@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import './App.css';
-import WeatherApp from './Components/WeatherApp';;
+import WeatherApp from './Components/WeatherApp';
 
 export const ThemeContext = createContext(null);
 
@@ -11,7 +11,7 @@ function App() {
     <div
       style={{
         backgroundColor: theme === 'dark' ? 'rgb(22, 24, 29)' : '#fff',
-        height: '100%'
+        height: '100%',
       }}
     >
       <ThemeContext.Provider value={theme}>
